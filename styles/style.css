@@ -1,5 +1,14 @@
 @import url("fonts.css");
 
+@keyframes animacionBoton {
+    from {
+        opacity: 0;
+        transform: translateY(20vh);
+    } to {
+        opacity: 100;
+          }
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -56,6 +65,7 @@ main{
     height: 10vh;
     margin-top: 5vh;
     transition: scale 1.5s;
+    animation: animacionBoton 3s;
 }
 
 #botonComenzar:hover{
