@@ -1,190 +1,190 @@
-<galeria>
-    <tarjeta>
+<peleadores>
+    <peleador>
         <nombre>Islam</nombre>
         <apellido>Makachev</apellido>
         <alias>null</alias>
         <pais>Rusia</pais>
         <cita>"Send him two three years Dagestan and forget"</cita>
         <imagen></imagen>
-    </tarjeta>
+    </peleador>
 
-    <tarjeta>
+    <peleador>
         <nombre>Ilia</nombre>
         <apellido>Topuria</apellido>
         <alias>The Matador</alias>
         <pais>España - Georgia</pais>
         <cita>"Who's Joe?"</cita>
         <imagen></imagen>
-    </tarjeta>
+    </peleador>
 
-    <tarjeta>
+    <peleador>
         <nombre>Khabib</nombre>
         <apellido>Nurmagomedov</apellido>
         <alias>The Eagle</alias>
         <pais>Rusia</pais>
         <cita>"Send me location"</cita>
         <imagen></imagen>
-    </tarjeta>
+    </peleador>
 
-    <tarjeta>
+    <peleador>
         <nombre>Connor</nombre>
         <apellido>McGregor</apellido>
         <alias>The Notorius</alias>
         <pais>Irlanda</pais>
         <cita>"Your wife is in my dm's"</cita>
         <imagen></imagen>
-    </tarjeta>
+    </peleador>
 
-    <tajeta>
+    <peleador>
         <nombre>Jon</nombre>
         <apellido>Jones</apellido>
         <alias>Bones</alias>
         <pais>Estados Unidos</pais>
         <cita>"I will absolutely kill you"</cita>
         <imagen></imagen>
-    </tajeta>
+    </peleador>
 
-    <tajeta>
+    <peleador>
         <nombre>Daniel</nombre>
         <apellido>Cormier</apellido>
         <alias>DC</alias>
         <pais>Estados Unidos</pais>
         <cita>"I can spit in your f*cking face"</cita>
         <imagen></imagen>
-    </tajeta>
+    </peleador>
 
-    <tajeta>
+    <peleador>
         <nombre>Charles</nombre>
         <apellido>Oliveira</apellido>
         <alias>Do Bronx</alias>
         <pais>Brasil</pais>
         <cita>"Eu sou iluminado por Deus"</cita>
         <imagen></imagen>
-    </tajeta>
+    </peleador>
 
-    <tajeta>
+    <peleador>
         <nombre>Tony</nombre>
         <apellido>Fergusson</apellido>
         <alias>El Cucuy</alias>
         <pais>Estados Unidos</pais>
         <cita>"Imma fight until the wheels fall off. Fuck retiring"</cita>
         <imagen></imagen>
-    </tajeta>
+    </peleador>
 
-    <tajeta>
+    <peleador>
         <nombre>Joel</nombre>
         <apellido>Álvarez</apellido>
         <alias>El Fenómeno</alias>
         <pais>España</pais>
         <cita>"Soy español joder, somos así de naturaleza"</cita>
         <imagen></imagen>
-    </tajeta>
+    </peleador>
 
-    <tajeta>
+    <peleador>
         <nombre>Aleksandre</nombre>
         <apellido>Topuria</apellido>
         <alias>El Conquistador</alias>
         <pais>España - Georgia</pais>
         <cita>"Become a better person, better fighter, better coach, better everything"</cita>
         <imagen></imagen>
-    </tajeta>
+    </peleador>
 
-    <tajeta>
+    <peleador>
         <nombre>Hecher</nombre>
         <apellido>Sosa</apellido>
         <alias>El Guanche Warrior</alias>
         <pais>España</pais>
         <cita>"The dream is free, but the hustle is sold separately"</cita>
         <imagen></imagen>
-    </tajeta>
+    </peleador>
 
-    <tajeta>
+    <peleador>
         <nombre>Dustin</nombre>
         <apellido>Poirier</apellido>
         <alias>The Diamond</alias>
         <pais>Estados Unidos</pais>
         <cita>"Pressure makes diamonds"</cita>
         <imagen></imagen>
-    </tajeta>
+    </peleador>
 
-    <tajeta>
+    <peleador>
         <nombre>Merab</nombre>
         <apellido>Dvalishvili</apellido>
         <alias>The Machine</alias>
         <pais>Georgia</pais>
         <cita>"Don’t let them bully you. Don’t let them underestimate you. Believe in yourself"</cita>
         <imagen></imagen>
-    </tajeta>
+    </peleador>
 
-    <tajeta>
+    <peleador>
         <nombre>Alexander</nombre>
         <apellido>Volkanovski</apellido>
         <alias>The Great</alias>
         <pais>Australia</pais>
         <cita>"Adversity is a privilege"</cita>
         <imagen></imagen>
-    </tajeta>
+    </peleador>
 
-    <tajeta>
+    <peleador>
         <nombre>Max</nombre>
         <apellido>Holloway</apellido>
         <alias>Blessed</alias>
         <pais>Estados Unidos</pais>
         <cita>"If you want to be the best, you've got to beat the best, and the best is 'Blessed,' baby"</cita>
         <imagen></imagen>
-    </tajeta>
+    </peleador>
 
-    <tajeta>
+    <peleador>
         <nombre>Khamzat</nombre>
         <apellido>Chimaev</apellido>
         <alias>The Wolve</alias>
         <pais>Chechenia</pais>
         <cita>"I'm coming for everybody kill everybody"</cita>
         <imagen></imagen>
-    </tajeta>
+    </peleador>
 
-    <tajeta>
+    <peleador>
         <nombre>Alex</nombre>
         <apellido>Pereira</apellido>
         <alias>Poatan</alias>
         <pais>Brasil</pais>
         <cita>"Chama"</cita>
         <imagen></imagen>
-    </tajeta>
+    </peleador>
 
-    <tajeta>
+    <peleador>
         <nombre>Alexandre</nombre>
         <apellido>Pantoja</apellido>
         <alias>The Cannibal</alias>
         <pais>Brasil</pais>
         <cita>"I'm the GOAT here. If you want to prove you're the GOAT, come back"</cita>
         <imagen></imagen>
-    </tajeta>
+    </peleador>
 
-    <tajeta>
+    <peleador>
         <nombre>Arman</nombre>
         <apellido>Tsarukyan</apellido>
         <alias>Ahalkalakets</alias>
         <pais>Armenia</pais>
         <cita>“I'm a good boy”</cita>
         <imagen></imagen>
-    </tajeta>
+    </peleador>
 
-    <tajeta>
+    <peleador>
         <nombre>Georges</nombre>
         <apellido>St Pierre</apellido>
         <alias>GSP</alias>
         <pais>Canada</pais>
         <cita>"There is no courage without fear"</cita>
         <imagen></imagen>
-    </tajeta>
+    </peleador>
 
-    <tajeta>
+    <peleador>
         <nombre>Justin</nombre>
         <apellido>Gaethje</apellido>
         <alias>The Highlight</alias>
         <pais>Estados Unidos</pais>
         <cita>"I want war"</cita>
         <imagen></imagen>
-    </tajeta>
-</galeria>
+    </peleador>
+</peleadores>
