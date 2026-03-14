@@ -1,0 +1,8 @@
+@import url("fonts.css");
+
+:root{
+    --text-color: white;
+    --color-header-footer: black;
+    --color-hover: red;
+}
+
