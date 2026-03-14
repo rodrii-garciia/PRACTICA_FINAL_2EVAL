@@ -7,10 +7,8 @@
 
 :root{
     --bg-color: whitesmoke;
-    --accent: #06c006;
-    --accent-soft: #6cef6c;
-    --accent-hard: #067706;
-
+    --color-hover: #bf2b2b;
+    --color-header-footer: #000000;
     --white-font: white;
 }
 
@@ -20,18 +18,18 @@ body{
 
 /* Header */
 header{
-    height: 10vh;
-    background-color: var(--accent);
-
+    height: 8vh;
+    background-color: var(--color-header-footer);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 header h2{
     color: var(--white-font);
     font-family: Inter, serif;
-    padding-left: 3vw;
+    font-size: 4vh;
+
 }
 
 /* Main */
@@ -41,40 +39,51 @@ main{
     justify-content: center;
     flex-direction: column;
 
-    height: 85vh;
+    height: calc(100vh - (8vh + 8vh));
     background-color: var(--bg-color);
-    color: var(--accent-hard);
-    font-size: 30px;
-    font-family: Inter, serif;
+    color: var(--color-header-footer);
 }
 
-main a{
-
+#botonComenzar{
     display: flex;
     align-items: center;
     justify-content: center;
 
-    margin-top: 3vw;
     text-decoration: none;
-    background-color: var(--accent-soft);
-    border-radius: 3vw;
-    width: 30vw;
+    background-color: var(--color-header-footer);
+    border-radius: 45px;
+    width: 40vh;
     height: 10vh;
-
+    margin-top: 5vh;
+    transition: scale 1.5s;
 }
 
-main p{
+#botonComenzar:hover{
+    scale: 1.25;
+}
+
+#botonComenzar p{
     text-decoration: none;
     color: var(--white-font);
     font-weight: 700;
+    font-size: 4.5vh;
+}
+
+h1{
+    font-size: 7.5vh;
+}
+
+.subtitulo{
+    font-size: 3vh;
+    margin-top: 1vh;
 }
 
 /* Footer */
 footer{
     color: var(--white-font);
     font-family: Inter, serif;
-    height: 5vh;
-    background-color: var(--accent);
+    height: 8vh;
+    background-color: var(--color-header-footer);
 
     display: flex;
     align-items: center;
@@ -83,4 +92,5 @@ footer{
 
 footer p{
     font-weight: 700;
+    font-size: 2vh;
 }
