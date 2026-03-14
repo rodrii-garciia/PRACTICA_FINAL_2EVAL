@@ -1,0 +1,48 @@
+@import url("fonts.css");
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --bg-color: whitesmoke;
+    --accent: #067706;
+    --accent-soft: #06c006;
+    --accent-hard: #045c04;
+
+    --main-font: 'Inter' 16px;
+}
+
+body{
+    height: 100vh;
+
+}
+
+header{
+    height: 10vh;
+    background-color: var(--accent);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    height: 85vh;
+    background-color: var(--bg-color);
+}
+
+footer{
+    height: 5vh;
+    background-color: var(--accent);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
