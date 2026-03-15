@@ -113,6 +113,10 @@ h1 {
   align-items: center;
 }
 
+.formularioAbierto {
+  filter: blur(4px) grayscale(0.5);
+}
+
 #listaPeleadores li {
   display: flex;
   flex-direction: column;

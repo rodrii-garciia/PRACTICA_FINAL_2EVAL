@@ -76,10 +76,20 @@ function renderPeleador(p) {
 //Cogemos el elemento del propio formulario
 const form = document.getElementById("anyadirTarjeta");
 
-
-iconoSubir.addEventListener("click", () => {
+//Funciones abrir y cerrar formulario
+function abrirFormulario() {
   form.style.display = "flex";
-})
+  lista.classList.add("formularioAbierto");
+}
+
+function cerrarFormulario() {
+  form.style.display = "none";
+  lista.classList.remove("formularioAbierto");
+  form.reset();
+}
+
+//AddEventListener para abrir formulario
+iconoSubir.addEventListener("click", abrirFormulario);
 
 // Añadir nuevo peleador desde el formulario
 form.addEventListener("submit", (e) => {
@@ -99,7 +109,7 @@ form.addEventListener("submit", (e) => {
 
   peleadores.push(nuevoPeleador); // Guardamos en el array
   renderPeleador(nuevoPeleador); // Pintamos en la página
-  form.reset(); // Limpiar formulario
+  cerrarFormulario();
 });
 
 // Hacemos que el boton de la cruz cambie cuando queramos cerrar el formulario
@@ -114,7 +124,4 @@ imagenCerrarFormulario.addEventListener("mouseout", () => {
 })
 
 //Ahora hacemos que el boton cierre y limpie el formulario
-imagenCerrarFormulario.addEventListener("click", (e) => {
-  form.style.display = "none";
-  form.reset();
-})
+imagenCerrarFormulario.addEventListener("click", cerrarFormulario)
