@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<peleadores xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="tarjetas.xsd">
+<peleadores xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="peleadores.xsd">
     <peleador id="peleador1">
         <nombre>Islam</nombre>
         <apellido>Makachev</apellido>

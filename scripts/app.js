@@ -21,19 +21,33 @@ radioNoche.addEventListener('change', () => {
 });
 
 // Extraer peleadores del XML
+
+//Creamos un array de peleadores
 const peleadores = [];
+
+//Coghemos la informacion del xml
 fetch("data/peleadores.xml")
     .then(peleador => peleador.text())
     .then(xmlString => {
 
+        //Creamos un objeto para pasar la información del xml a String
         const parser = new DOMParser();
         const xml = parser.parseFromString(xmlString, "text/xml");
 
+        //Recogemos la información del xml en un array para poder utilizarlo después
         const peleadoresXML = xml.getElementsByTagName("peleador");
-        const lista = document.querySelector(".listaPeleadores");
 
+        //Recogemos el elemento ul en el que luego appendearemos los li con la información de los peleadores
+        const lista = document.getElementById("listaPeleadores");
+
+        //Creamos un bucle para recorrer el array con la información de los peleadores para ir introduciendolos
+        // dinamicamente en el html
         for(let i = 0; i < peleadoresXML.length; i++){
 
+            //Recogemos toda la información del xml y la almacenamos en constantes
+            //La guardamos en constantes ya qué en cada iteración del bucle la constante "desaparece" y se crea una nueva,
+            //por eso no es que alteremos la constante, sino que creamos una nueva con el mismo nombre guardando
+            //información distinta
             const id = "peleador" + (i+1)
             const nombre = peleadoresXML[i].getElementsByTagName("nombre")[0].textContent;
             const apellido = peleadoresXML[i].getElementsByTagName("apellido")[0].textContent;
@@ -47,12 +61,10 @@ fetch("data/peleadores.xml")
             elemento.innerHTML = `
                 <img src="${imagenUrl}" alt="Imagen de ${nombre} ${apellido}">
                 <h2>${nombre} ${apellido}</h2>
-                <p class="alias">${alias}</p>
-                <p class="pais">${pais}</p>
-                <p class="cita">${cita}</p>
+                <p>${alias}</p>
+                <p>${pais}</p>
+                <p>${cita}</p>
             `
-
-            elemento.classList.add("tarjeta");
 
             lista.appendChild(elemento);
 
