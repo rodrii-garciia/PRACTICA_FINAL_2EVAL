@@ -1,190 +1,191 @@
-<peleadores>
-    <peleador>
+<?xml version="1.0" encoding="UTF-8"?>
+<peleadores xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="tarjetas.xsd">
+    <peleador id="peleador1">
         <nombre>Islam</nombre>
         <apellido>Makachev</apellido>
-        <alias>null</alias>
+        <alias>none</alias>
         <pais>Rusia</pais>
         <cita>"Send him two three years Dagestan and forget"</cita>
-        <imagen></imagen>
+        <imagenUrl>../assets/img/peleadores/islam.jpg</imagenUrl>
     </peleador>
 
-    <peleador>
+    <peleador id="peleador2">
         <nombre>Ilia</nombre>
         <apellido>Topuria</apellido>
         <alias>The Matador</alias>
         <pais>España - Georgia</pais>
         <cita>"Who's Joe?"</cita>
-        <imagen></imagen>
+        <imagenUrl>../assets/img/peleadores/ilia.jpg</imagenUrl>
     </peleador>
 
-    <peleador>
+    <peleador id="peleador3">
         <nombre>Khabib</nombre>
         <apellido>Nurmagomedov</apellido>
         <alias>The Eagle</alias>
         <pais>Rusia</pais>
         <cita>"Send me location"</cita>
-        <imagen></imagen>
+        <imagenUrl>../assets/img/peleadores/khabib.jpg</imagenUrl>
     </peleador>
 
-    <peleador>
-        <nombre>Connor</nombre>
+    <peleador id="peleador4">
+        <nombre>Conor</nombre>
         <apellido>McGregor</apellido>
         <alias>The Notorius</alias>
         <pais>Irlanda</pais>
         <cita>"Your wife is in my dm's"</cita>
-        <imagen></imagen>
+        <imagenUrl>../assets/img/peleadores/conor.jpg</imagenUrl>
     </peleador>
 
-    <peleador>
+    <peleador id="peleador5">
         <nombre>Jon</nombre>
         <apellido>Jones</apellido>
         <alias>Bones</alias>
         <pais>Estados Unidos</pais>
         <cita>"I will absolutely kill you"</cita>
-        <imagen></imagen>
+        <imagenUrl>../assets/img/peleadores/jon.jpg</imagenUrl>
     </peleador>
 
-    <peleador>
+    <peleador id="peleador6">
         <nombre>Daniel</nombre>
         <apellido>Cormier</apellido>
         <alias>DC</alias>
         <pais>Estados Unidos</pais>
         <cita>"I can spit in your f*cking face"</cita>
-        <imagen></imagen>
+        <imagenUrl>../assets/img/peleadores/daniel.jpg</imagenUrl>
     </peleador>
 
-    <peleador>
+    <peleador id="peleador7">
         <nombre>Charles</nombre>
         <apellido>Oliveira</apellido>
         <alias>Do Bronx</alias>
         <pais>Brasil</pais>
         <cita>"Eu sou iluminado por Deus"</cita>
-        <imagen></imagen>
+        <imagenUrl>../assets/img/peleadores/charles.jpg</imagenUrl>
     </peleador>
 
-    <peleador>
+    <peleador id="peleador8">
         <nombre>Tony</nombre>
         <apellido>Fergusson</apellido>
         <alias>El Cucuy</alias>
         <pais>Estados Unidos</pais>
         <cita>"Imma fight until the wheels fall off. Fuck retiring"</cita>
-        <imagen></imagen>
+        <imagenUrl>../assets/img/peleadores/tony.jpg</imagenUrl>
     </peleador>
 
-    <peleador>
+    <peleador id="peleador9">
         <nombre>Joel</nombre>
         <apellido>Álvarez</apellido>
         <alias>El Fenómeno</alias>
         <pais>España</pais>
         <cita>"Soy español joder, somos así de naturaleza"</cita>
-        <imagen></imagen>
+        <imagenUrl>../assets/img/peleadores/joel.jpg</imagenUrl>
     </peleador>
 
-    <peleador>
+    <peleador id="peleador10">
         <nombre>Aleksandre</nombre>
         <apellido>Topuria</apellido>
         <alias>El Conquistador</alias>
         <pais>España - Georgia</pais>
         <cita>"Become a better person, better fighter, better coach, better everything"</cita>
-        <imagen></imagen>
+        <imagenUrl>../assets/img/peleadores/aleksandre.jpg</imagenUrl>
     </peleador>
 
-    <peleador>
+    <peleador id="peleador11">
         <nombre>Hecher</nombre>
         <apellido>Sosa</apellido>
         <alias>El Guanche Warrior</alias>
         <pais>España</pais>
         <cita>"The dream is free, but the hustle is sold separately"</cita>
-        <imagen></imagen>
+        <imagenUrl>../assets/img/peleadores/hecher.jpg</imagenUrl>
     </peleador>
 
-    <peleador>
+    <peleador id="peleador12">
         <nombre>Dustin</nombre>
         <apellido>Poirier</apellido>
         <alias>The Diamond</alias>
         <pais>Estados Unidos</pais>
         <cita>"Pressure makes diamonds"</cita>
-        <imagen></imagen>
+        <imagenUrl>../assets/img/peleadores/dustin.jpg</imagenUrl>
     </peleador>
 
-    <peleador>
+    <peleador id="peleador13">
         <nombre>Merab</nombre>
         <apellido>Dvalishvili</apellido>
         <alias>The Machine</alias>
         <pais>Georgia</pais>
         <cita>"Don’t let them bully you. Don’t let them underestimate you. Believe in yourself"</cita>
-        <imagen></imagen>
+        <imagenUrl>../assets/img/peleadores/merab.jpg</imagenUrl>
     </peleador>
 
-    <peleador>
+    <peleador id="peleador14">
         <nombre>Alexander</nombre>
         <apellido>Volkanovski</apellido>
         <alias>The Great</alias>
         <pais>Australia</pais>
         <cita>"Adversity is a privilege"</cita>
-        <imagen></imagen>
+        <imagenUrl>../assets/img/peleadores/alexander.jpg</imagenUrl>
     </peleador>
 
-    <peleador>
+    <peleador id="peleador15">
         <nombre>Max</nombre>
         <apellido>Holloway</apellido>
         <alias>Blessed</alias>
         <pais>Estados Unidos</pais>
         <cita>"If you want to be the best, you've got to beat the best, and the best is 'Blessed,' baby"</cita>
-        <imagen></imagen>
+        <imagenUrl>../assets/img/peleadores/max.jpg</imagenUrl>
     </peleador>
 
-    <peleador>
+    <peleador id="peleador16">
         <nombre>Khamzat</nombre>
         <apellido>Chimaev</apellido>
         <alias>The Wolve</alias>
         <pais>Chechenia</pais>
         <cita>"I'm coming for everybody kill everybody"</cita>
-        <imagen></imagen>
+        <imagenUrl>../assets/img/peleadores/khamzat.jpg</imagenUrl>
     </peleador>
 
-    <peleador>
+    <peleador id="peleador17">
         <nombre>Alex</nombre>
         <apellido>Pereira</apellido>
         <alias>Poatan</alias>
         <pais>Brasil</pais>
         <cita>"Chama"</cita>
-        <imagen></imagen>
+        <imagenUrl>../assets/img/peleadores/alex.jpg</imagenUrl>
     </peleador>
 
-    <peleador>
+    <peleador id="peleador18">
         <nombre>Alexandre</nombre>
         <apellido>Pantoja</apellido>
         <alias>The Cannibal</alias>
         <pais>Brasil</pais>
         <cita>"I'm the GOAT here. If you want to prove you're the GOAT, come back"</cita>
-        <imagen></imagen>
+        <imagenUrl>../assets/img/peleadores/alexandre.jpg</imagenUrl>
     </peleador>
 
-    <peleador>
+    <peleador id="peleador19">
         <nombre>Arman</nombre>
         <apellido>Tsarukyan</apellido>
         <alias>Ahalkalakets</alias>
         <pais>Armenia</pais>
-        <cita>“I'm a good boy”</cita>
-        <imagen></imagen>
+        <cita>"Dana, Hunter I'm a good boy"</cita>
+        <imagenUrl>../assets/img/peleadores/arman.jpg</imagenUrl>
     </peleador>
 
-    <peleador>
+    <peleador id="peleador20">
         <nombre>Georges</nombre>
         <apellido>St Pierre</apellido>
         <alias>GSP</alias>
         <pais>Canada</pais>
         <cita>"There is no courage without fear"</cita>
-        <imagen></imagen>
+        <imagenUrl>../assets/img/peleadores/george.jpg</imagenUrl>
     </peleador>
 
-    <peleador>
+    <peleador id="peleador21">
         <nombre>Justin</nombre>
         <apellido>Gaethje</apellido>
         <alias>The Highlight</alias>
         <pais>Estados Unidos</pais>
         <cita>"I want war"</cita>
-        <imagen></imagen>
+        <imagenUrl>../assets/img/peleadores/justin.jpg</imagenUrl>
     </peleador>
 </peleadores>

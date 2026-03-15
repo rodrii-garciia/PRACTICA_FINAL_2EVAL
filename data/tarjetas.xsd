@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:element name="peleadores">
+
+        <xsd:complexType>
+
+            <xsd:sequence>
+
+                <xsd:element name="peleador" maxOccurs="unbounded">
+
+                    <xsd:complexType>
+
+                        <xsd:sequence>
+
+                            <xsd:element name="nombre" type="xsd:string"/>
+
+                            <xsd:element name="apellido" type="xsd:string"/>
+
+                            <xsd:element name="alias" type="xsd:string"/>
+
+                            <xsd:element name="pais" type="xsd:string"/>
+
+                            <xsd:element name="cita" type="xsd:string"/>
+
+                            <xsd:element name="imagenUrl" type="xsd:string"/>
+
+                        </xsd:sequence>
+
+                        <xsd:attribute name="id" type="xsd:ID" use="required"/>
+
+                    </xsd:complexType>
+
+                </xsd:element>
+
+            </xsd:sequence>
+
+        </xsd:complexType>
+
+    </xsd:element>
+
+</xsd:schema>
