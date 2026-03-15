@@ -7,15 +7,15 @@
     --text-color: black;
     --color-texto-header-footer: #ffffff;
     --color-tarjetas: #dcdcdc;
-    --color-sombra-tarjetas: rgb(202, 17, 17);
+    --color-sombra-tarjetas: #CA1111FF;
     --color-sombra-tarjetas-hover: #ca1111;
 }
 
 body.darkMode{
-    --color-header-footer: rgba(0, 0, 0, 0.9);
+    --color-header-footer: #000000E6;
     --color-main: #2e2e2e;
     --color-hover: #F07178;
-    --text-color: rgba(255, 255, 255, 1);
+    --text-color: #FFFFFFFF;
     --color-tarjetas: #CA1111FF;
     --color-texto-header-footer: #CA1111FF;
     --color-sombra-tarjetas: #000000;
