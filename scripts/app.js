@@ -3,20 +3,26 @@ const radioDia = document.getElementById('modoDia');
 const radioNoche = document.getElementById('modoNoche');
 const iconoSol = document.getElementById('iconoSol');
 const iconoLuna = document.getElementById('iconoLuna');
+const iconoSubir = document.getElementById('iconoSubir');
+const iconoLupa = document.getElementById('iconoLupa');
 
 radioDia.addEventListener('change', () => {
     if (radioDia.checked) {
         document.body.classList.remove('darkMode');
-        iconoSol.src = "assets/img/sol-dia.png";
-        iconoLuna.src = "assets/img/luna-dia.png";
+        iconoSol.src = "assets/img/iconosHeader/sol-dia.png";
+        iconoLuna.src = "assets/img/iconosHeader/luna-dia.png";
+        iconoSubir.src = "assets/img/iconosHeader/subir-dia.png";
+        iconoLupa.src = "assets/img/iconosHeader/lupa-dia.png";
     }
 });
 
 radioNoche.addEventListener('change', () => {
     if (radioNoche.checked) {
         document.body.classList.add('darkMode');
-        iconoSol.src = "assets/img/sol-noche.png";
-        iconoLuna.src = "assets/img/luna-noche.png";
+        iconoSol.src = "assets/img/iconosHeader/sol-noche.png";
+        iconoLuna.src = "assets/img/iconosHeader/luna-noche.png";
+        iconoSubir.src = "assets/img/iconosHeader/subir-noche.png";
+        iconoLupa.src = "assets/img/iconosHeader/lupa-noche.png";
     }
 });
 

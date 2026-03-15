@@ -8,7 +8,7 @@
     --color-texto-header-footer: #ffffff;
     --color-tarjetas: #dcdcdc;
     --color-sombra-tarjetas: rgb(202, 17, 17);
-    --color-sombra-tarjetas-hover: black;
+    --color-sombra-tarjetas-hover: #ca1111;
 }
 
 body.darkMode{
@@ -39,6 +39,9 @@ header{
     background-color: var(--color-header-footer);
     padding: 5px 10px;
     height: 6vh;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 header h2{
@@ -47,6 +50,7 @@ header h2{
     font-size: 4vh;
     position: absolute;
     left: 48%;
+    margin: 0;
 }
 
 .escogerModo {
@@ -64,8 +68,17 @@ header h2{
     width: 20px;
 }
 
+#iconoLuna, #iconoSol, #iconoSubir, #iconoLupa{
+    cursor: pointer;
+}
+
 header input{
     display: none;
+}
+
+.imagenesDerecha{
+    display: flex;
+    gap: 20px;
 }
 
 /*Main*/
@@ -105,11 +118,11 @@ h1{
     max-width: 30vw;
     padding: 10px;
     background-color: var(--color-tarjetas);
+    cursor: pointer;
 }
 
 #listaPeleadores li h2{
     text-align: center;
-    font-family: Poppins;
 }
 
 #listaPeleadores li:hover{
