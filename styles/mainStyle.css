@@ -45,12 +45,13 @@ header h2{
 }
 
 .escogerModo {
-    background-color: grey;
+    border: 2px solid var(--text-color);
     border-radius: 30px;
-    height: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 15px;
+    padding: 5px 15px;
 }
 
 header input{
