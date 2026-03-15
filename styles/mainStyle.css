@@ -6,3 +6,27 @@
     --color-hover: red;
 }
 
+body{
+    display: grid;
+    grid-template-areas: "header" "main" "footer";
+    grid-template-rows: auto 1fr auto;
+}
+
+header{
+    grid-area: header;
+    display: flex;
+}
+
+main{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: calc(100vh - (8vh + 8vh));
+}
+
+footer{
+    grid-area: footer;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
