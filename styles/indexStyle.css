@@ -1,117 +1,118 @@
 @import url("fonts.css");
 
 @keyframes animacionBoton {
-    from {
-        opacity: 0;
-        transform: translateY(20vh);
-    } to {
-        opacity: 100;
-          }
+  from {
+    opacity: 0;
+    transform: translateY(20vh);
+  }
+  to {
+    opacity: 100;
+  }
 }
 
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-:root{
-    --bg-color: whitesmoke;
-    --color-header-footer: #ca1111ff;
-    --white-font: white;
+:root {
+  --bg-color: whitesmoke;
+  --color-header-footer: #ca1111ff;
+  --white-font: white;
 }
 
-body{
-    height: 100vh;
+body {
+  height: 100vh;
 }
 
 /* Header */
-header{
-    height: 8vh;
-    background-color: var(--color-header-footer);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+header {
+  height: 8vh;
+  background-color: var(--color-header-footer);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-header h2{
-    color: var(--white-font);
-    font-family: Sternbach, serif;
-    font-size: 4vh;
-    cursor: pointer;
+header h2 {
+  color: var(--white-font);
+  font-family: Sternbach, serif;
+  font-size: 4vh;
+  cursor: pointer;
 }
 
 /* Main */
-main{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 
-    height: calc(100vh - (8vh + 8vh));
-    background-image:
-            linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)),
-            url("../assets/img/bgImage.png");
-    color: white;
+  height: calc(100vh - (8vh + 8vh));
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)),
+    url("../assets/img/bgImage.png");
+  color: white;
 }
 
-#botonComenzar{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#botonComenzar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    text-decoration: none;
-    font-family: Roboto, serif;
-    background-color: var(--color-header-footer);
-    border-radius: 45px;
-    width: 40vh;
-    height: 10vh;
-    margin-top: 5vh;
-    transition: scale 1.5s;
-    animation: animacionBoton 3s;
+  text-decoration: none;
+  font-family: Roboto, serif;
+  background-color: var(--color-header-footer);
+  border-radius: 45px;
+  width: 40vh;
+  height: 10vh;
+  margin-top: 5vh;
+  transition: scale 1.5s;
+  animation: animacionBoton 3s;
 }
 
-#botonComenzar:hover{
-    scale: 1.15;
+#botonComenzar:hover {
+  scale: 1.15;
 }
 
-#botonComenzar p{
-    text-decoration: none;
-    color: var(--white-font);
-    font-weight: 700;
-    font-size: 4.5vh;
+#botonComenzar p {
+  text-decoration: none;
+  color: var(--white-font);
+  font-weight: 700;
+  font-size: 4.5vh;
 }
 
-h1{
-    font-size: 10vh;
-    font-family: Roboto, serif;
-    text-shadow: 5px 5px 10px black;
-    font-weight: 900;
+h1 {
+  font-size: 10vh;
+  font-family: Roboto, serif;
+  text-shadow: 5px 5px 10px black;
+  font-weight: 900;
 }
 
-h1 span{
-    font-family: Sternbach, serif;
-    color: var(--color-header-footer);
+h1 span {
+  font-family: Sternbach, serif;
+  color: var(--color-header-footer);
 }
 
-.subtitulo{
-    font-size: 3.5vh;
-    margin-top: 1vh;
-    font-family: Tahoma, serif;
+.subtitulo {
+  font-size: 3.5vh;
+  margin-top: 1vh;
+  font-family: Tahoma, serif;
 }
 
 /* Footer */
-footer{
-    color: var(--white-font);
-    font-family: Roboto, serif;
-    height: 8vh;
-    background-color: var(--color-header-footer);
+footer {
+  color: var(--white-font);
+  font-family: Roboto, serif;
+  height: 8vh;
+  background-color: var(--color-header-footer);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-footer p{
-    font-weight: 700;
-    font-size: 2vh;
+footer p {
+  font-weight: 700;
+  font-size: 2vh;
 }

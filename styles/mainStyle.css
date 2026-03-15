@@ -1,160 +1,170 @@
 @import url("fonts.css");
 
-:root{
-    --color-header-footer: #CA1111FF;
-    --color-main: #dcdcdc;
-    --color-hover: #E63946;
-    --text-color: black;
-    --color-texto-header-footer: #ffffff;
-    --color-tarjetas: #dcdcdc;
-    --color-sombra-tarjetas: #CA1111FF;
-    --color-sombra-tarjetas-hover: #ca1111;
+:root {
+  --color-header-footer: #ca1111ff;
+  --color-main: #dcdcdc;
+  --color-hover: #e63946;
+  --text-color: black;
+  --color-texto-header-footer: #ffffff;
+  --color-tarjetas: #dcdcdc;
+  --color-sombra-tarjetas: #ca1111ff;
+  --color-sombra-tarjetas-hover: #ca1111;
 }
 
-body.darkMode{
-    --color-header-footer: #000000E6;
-    --color-main: #2e2e2e;
-    --color-hover: #F07178;
-    --text-color: #FFFFFFFF;
-    --color-tarjetas: #CA1111FF;
-    --color-texto-header-footer: #CA1111FF;
-    --color-sombra-tarjetas: #000000;
-    --color-sombra-tarjetas-hover: #838383;
+body.darkMode {
+  --color-header-footer: #000000e6;
+  --color-main: #2e2e2e;
+  --color-hover: #f07178;
+  --text-color: #ffffffff;
+  --color-tarjetas: #ca1111ff;
+  --color-texto-header-footer: #ca1111ff;
+  --color-sombra-tarjetas: #000000;
+  --color-sombra-tarjetas-hover: #838383;
 }
 
-body{
-    display: grid;
-    grid-template-areas: "header" "main" "footer";
-    grid-template-rows: auto 1fr auto;
-    margin: 0;
-    min-height: 100vh;
+body {
+  display: grid;
+  grid-template-areas: "header" "main" "footer";
+  grid-template-rows: auto 1fr auto;
+  margin: 0;
+  min-height: 100vh;
 }
 
 /*Header*/
-header{
-    grid-area: header;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--color-header-footer);
-    padding: 5px 10px;
-    height: 6vh;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-header-footer);
+  padding: 5px 10px;
+  height: 6vh;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-header h2{
-    color: var(--color-texto-header-footer);
-    font-family: "Sternbach", sans-serif;
-    font-size: 4vh;
-    position: absolute;
-    left: 48%;
-    margin: 0;
-    cursor: pointer;
+header h2 {
+  color: var(--color-texto-header-footer);
+  font-family: "Sternbach", sans-serif;
+  font-size: 4vh;
+  position: absolute;
+  left: 48%;
+  margin: 0;
+  cursor: pointer;
 }
 
 .escogerModo {
-    border: 2px solid var(--color-texto-header-footer);
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    padding: 5px 15px;
+  border: 2px solid var(--color-texto-header-footer);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 5px 15px;
 }
 
-#iconoLuna{
-    height: 20px;
-    width: 20px;
+#iconoLuna {
+  height: 20px;
+  width: 20px;
 }
 
-#iconoLuna, #iconoSol, #iconoSubir, #iconoLupa{
-    cursor: pointer;
+#iconoLuna,
+#iconoSol,
+#iconoSubir,
+#iconoLupa {
+  cursor: pointer;
 }
 
-header input{
-    display: none;
+header input {
+  display: none;
 }
 
-.imagenesDerecha{
-    display: flex;
-    gap: 20px;
+.imagenesDerecha {
+  display: flex;
+  gap: 20px;
 }
 
 /*Main*/
-main{
-    grid-area: main;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: calc(100vh - (6vh + 6vh));
-    background-color: var(--color-main);
-    padding: 15px;
-    font-family: Roboto, serif;
+main {
+  grid-area: main;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - (6vh + 6vh));
+  background-color: var(--color-main);
+  padding: 15px;
+  font-family: Roboto, serif;
 }
 
-h1{
-    font-size: 6vh;
-    margin: 0 0 0 0;
-    color: var(--text-color);
+h1 {
+  font-size: 6vh;
+  margin: 0 0 0 0;
+  color: var(--text-color);
 }
 
 #listaPeleadores {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 95vw;
-    gap: 30px;
-    padding: 5px;
-    justify-content: flex-end;
-    align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 95vw;
+  gap: 30px;
+  padding: 5px;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-#listaPeleadores li{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 30px;
-    box-shadow: 0 0 15px var(--color-sombra-tarjetas);
-    transition: scale 1s, box-shadow 1s;
-    max-width: 30vw;
-    padding: 10px;
-    background-color: var(--color-tarjetas);
-    cursor: pointer;
+#listaPeleadores li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 30px;
+  box-shadow: 0 0 15px var(--color-sombra-tarjetas);
+  transition:
+    scale 1s,
+    box-shadow 1s;
+  max-width: 30vw;
+  padding: 10px;
+  background-color: var(--color-tarjetas);
+  cursor: pointer;
 }
 
-#listaPeleadores li h2{
-    text-align: center;
+#listaPeleadores li h2 {
+  text-align: center;
 }
 
-#listaPeleadores li:hover{
-    scale: 1.025;
-    box-shadow: 0 0 25px var(--color-sombra-tarjetas-hover);
+#listaPeleadores li:hover {
+  scale: 1.025;
+  box-shadow: 0 0 25px var(--color-sombra-tarjetas-hover);
 }
 
-#listaPeleadores li p, #listaPeleadores li h2{
-    color: var(--text-color);
+#listaPeleadores li p,
+#listaPeleadores li h2 {
+  color: var(--text-color);
 }
 
-#listaPeleadores li img{
-    width: 100%;
-    height: 20vw;
-    border-radius: 30px;
-    overflow: hidden;
+#listaPeleadores li img {
+  width: 100%;
+  height: 20vw;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+#anyadirTarjeta {
+  display: none;
 }
 
 /*Footer*/
-footer{
-    grid-area: footer;
-    display: flex;
-    text-align: center;
-    justify-content: space-between;
-    height: 6vh;
-    padding: 0 10px;
-    background-color: var(--color-header-footer);
-    font-family: Roboto, serif;
+footer {
+  grid-area: footer;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  height: 6vh;
+  padding: 0 10px;
+  background-color: var(--color-header-footer);
+  font-family: Roboto, serif;
 }
 
 footer p {
-    color: var(--color-texto-header-footer);
+  color: var(--color-texto-header-footer);
 }

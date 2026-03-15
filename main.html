@@ -1,34 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>UFC Athletes</title>
-    <link rel="stylesheet" href="styles/mainStyle.css">
+    <link rel="stylesheet" href="styles/mainStyle.css" />
     <script src="scripts/app.js" defer></script>
-</head>
-<body>
-<header>
-    <input type="radio" name = "modoColores" id = "modoDia" checked>
-    <input type="radio" name = "modoColores" id = "modoNoche">
-    <div class = "escogerModo">
-        <label for="modoDia"><img src="assets/img/iconosHeader/sol-dia.png" alt="Sol" id="iconoSol"></label>
-        <label for="modoNoche"><img src="assets/img/iconosHeader/luna-dia.png" alt="Luna" id="iconoLuna"></label>
-    </div>
-    <h2 onclick="window.open('https://www.ufc.com', '_blank');">UFC</h2>
-    <div class="imagenesDerecha">
-        <img src="assets/img/iconosHeader/subir-dia.png" alt="Subida nueva tarjeta" id="iconoSubir">
-        <img src="assets/img/iconosHeader/lupa-dia.png" alt="Lupa para buscar" id ="iconoLupa">
-    </div>
-</header>
-<main>
-    <ul id = "listaPeleadores">
+  </head>
+  <body>
+    <header>
+      <input type="radio" name="modoColores" id="modoDia" checked />
+      <input type="radio" name="modoColores" id="modoNoche" />
+      <div class="escogerModo">
+        <label for="modoDia"
+          ><img
+            src="assets/img/iconosHeader/sol-dia.png"
+            alt="Sol"
+            id="iconoSol"
+        /></label>
+        <label for="modoNoche"
+          ><img
+            src="assets/img/iconosHeader/luna-dia.png"
+            alt="Luna"
+            id="iconoLuna"
+        /></label>
+      </div>
+      <h2 onclick="window.open('https://www.ufc.com', '_blank')">UFC</h2>
+      <div class="imagenesDerecha">
+        <img
+          src="assets/img/iconosHeader/subir-dia.png"
+          alt="Subida nueva tarjeta"
+          id="iconoSubir"
+        />
+        <img
+          src="assets/img/iconosHeader/lupa-dia.png"
+          alt="Lupa para buscar"
+          id="iconoLupa"
+        />
+      </div>
+    </header>
+    <main>
+      <ul id="listaPeleadores">
         <!-- Aquí se irán insertando dinámicamente los peleadores-->
-    </ul>
-</main>
-<footer>
-    <p>CopyRight © UFC Athletes</p>
-    <p>David López Zurrón y Rodrigo García Sánchez</p>
-</footer>
-</body>
+      </ul>
+      <form id="anyadirTarjeta">
+        <label for="nombre">Nombre del peleador*</label>
+        <input type="text" id="nombre" name="nombre" required />
+        <label for="apellido">Apellido del peleador*</label>
+        <input type="text" id="apellido" name="apellido" required />
+        <label for="alias">Alias del peleador</label>
+        <input type="text" id="alias" name="alias" />
+        <label for="pais">País del peleador</label>
+        <input type="text" id="pais" name="pais" required />
+        <label for="urlImagen">URL de la imagen</label>
+        <input type="url" id="urlImagen" name="urlImagen" required />
+        <button type="submit">Enviar</button>
+      </form>
+    </main>
+    <footer>
+      <p>CopyRight © UFC Athletes</p>
+      <p>David López Zurrón y Rodrigo García Sánchez</p>
+    </footer>
+  </body>
 </html>
-
