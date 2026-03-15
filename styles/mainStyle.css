@@ -1,32 +1,116 @@
 @import url("fonts.css");
 
 :root{
+    --color-header-footer: rgba(0, 0, 0, 0.5);
+    --color-main: #dcdcdc;
+    --color-hover: #E63946;
+    --text-color: black;
+    --color-tarjetas: ;
+    --color-sombra-tarjetas: rgba(0, 0, 5, 0.3);
+    --color-sombra-tarjetas-hover: black;
+}
+
+body.darkMode{
+    --color-header-footer: rgba(0, 0, 0, 0.9);
+    --color-main: #2e2e2e;
+    --color-hover: #F07178;
     --text-color: white;
-    --color-header-footer: black;
-    --color-hover: red;
+    --color-tarjetas: ;
+    --color-sombra-tarjetas: rgba(255, 255, 255, 0.5);
+    --color-sombra-tarjetas-hover: white;
 }
 
 body{
     display: grid;
     grid-template-areas: "header" "main" "footer";
     grid-template-rows: auto 1fr auto;
+    margin: 0;
+    min-height: 100vh;
 }
 
+/*Header*/
 header{
     grid-area: header;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-header-footer);
+    padding: 0 10px;
+    height: 6vh;
 }
 
+header h2{
+    color: var(--text-color);
+
+}
+
+.escogerModo {
+    background-color: grey;
+    border-radius: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header input{
+    display: none;
+}
+
+/*Main*/
 main{
     grid-area: main;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    height: calc(100vh - (8vh + 8vh));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: calc(100vh - (6vh + 6vh));
+    background-color: var(--color-main);
 }
 
+h1{
+    font-size: 6vh;
+    margin: 0 0 0 0;
+    color: var(--text-color);
+}
+
+.listaPeleadores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 95vw;
+    gap: 30px;
+    padding: 0;
+}
+
+.listaPeleadores li{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 30px;
+    box-shadow: 0 5px 10px var(--color-sombra-tarjetas);
+    transition: scale 1s, box-shadow 1s;
+}
+
+.listaPeleadores li:hover{
+    scale: 1.05;
+    box-shadow: 0 10px 20px var(--color-sombra-tarjetas-hover);
+}
+
+.listaPeleadores li p{
+    color: var(--text-color);
+}
+
+/*Footer*/
 footer{
     grid-area: footer;
     display: flex;
     text-align: center;
-    justify-content: center;
+    justify-content: space-between;
+    height: 6vh;
+    padding: 0 10px;
+    background-color: var(--color-header-footer);
+}
+
+footer p {
+    color: var(--text-color);
 }
