@@ -16,7 +16,7 @@
 
 :root{
     --bg-color: whitesmoke;
-    --color-header-footer: #000000;
+    --color-header-footer: #ca1111ff;
     --white-font: white;
 }
 
@@ -35,7 +35,7 @@ header{
 
 header h2{
     color: var(--white-font);
-    font-family: Inter, serif;
+    font-family: Sternbach, serif;
     font-size: 4vh;
 }
 
@@ -47,8 +47,10 @@ main{
     flex-direction: column;
 
     height: calc(100vh - (8vh + 8vh));
-    background-color: var(--bg-color);
-    color: var(--color-header-footer);
+    background-image:
+            linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)),
+            url("../assets/img/bgImage.png");
+    color: white;
 }
 
 #botonComenzar{
@@ -57,6 +59,7 @@ main{
     justify-content: center;
 
     text-decoration: none;
+    font-family: Roboto, serif;
     background-color: var(--color-header-footer);
     border-radius: 45px;
     width: 40vh;
@@ -67,7 +70,7 @@ main{
 }
 
 #botonComenzar:hover{
-    scale: 1.25;
+    scale: 1.15;
 }
 
 #botonComenzar p{
@@ -78,18 +81,27 @@ main{
 }
 
 h1{
-    font-size: 7.5vh;
+    font-size: 10vh;
+    font-family: Roboto, serif;
+    text-shadow: 5px 5px 10px black;
+    font-weight: 900;
+}
+
+h1 span{
+    font-family: Sternbach, serif;
+    color: var(--color-header-footer);
 }
 
 .subtitulo{
-    font-size: 3vh;
+    font-size: 3.5vh;
     margin-top: 1vh;
+    font-family: Tahoma, serif;
 }
 
 /* Footer */
 footer{
     color: var(--white-font);
-    font-family: Inter, serif;
+    font-family: Roboto, serif;
     height: 8vh;
     background-color: var(--color-header-footer);
 
