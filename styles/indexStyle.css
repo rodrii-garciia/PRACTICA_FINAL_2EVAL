@@ -37,6 +37,7 @@ header h2{
     color: var(--white-font);
     font-family: Sternbach, serif;
     font-size: 4vh;
+    cursor: pointer;
 }
 
 /* Main */

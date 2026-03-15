@@ -51,6 +51,7 @@ header h2{
     position: absolute;
     left: 48%;
     margin: 0;
+    cursor: pointer;
 }
 
 .escogerModo {
@@ -90,6 +91,7 @@ main{
     min-height: calc(100vh - (6vh + 6vh));
     background-color: var(--color-main);
     padding: 15px;
+    font-family: Roboto, serif;
 }
 
 h1{
@@ -150,6 +152,7 @@ footer{
     height: 6vh;
     padding: 0 10px;
     background-color: var(--color-header-footer);
+    font-family: Roboto, serif;
 }
 
 footer p {
