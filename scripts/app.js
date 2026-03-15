@@ -47,7 +47,7 @@ fetch("data/peleadores.xml")
     for (let i = 0; i < peleadoresXML.length; i++) {
       //Creamos un objeto peleador con cada uno de los que tenemos en el XML
       const peleador = {
-        id: "peleador " + (i + 1),
+        id: "peleador" + (i + 1),
         nombre: peleadoresXML[i].getElementsByTagName("nombre")[0].textContent,
         apellido:
           peleadoresXML[i].getElementsByTagName("apellido")[0].textContent,
