@@ -13,13 +13,13 @@
       <div class="escogerModo">
         <label for="modoDia"
           ><img
-            src="assets/img/iconosHeader/sol-dia.png"
+            src="assets/img/iconos/sol-dia.png"
             alt="Sol"
             id="iconoSol"
         /></label>
         <label for="modoNoche"
           ><img
-            src="assets/img/iconosHeader/luna-dia.png"
+            src="assets/img/iconos/luna-dia.png"
             alt="Luna"
             id="iconoLuna"
         /></label>
@@ -27,12 +27,12 @@
       <h2 onclick="window.open('https://www.ufc.com', '_blank')">UFC</h2>
       <div class="imagenesDerecha">
         <img
-          src="assets/img/iconosHeader/subir-dia.png"
+          src="assets/img/iconos/subir-dia.png"
           alt="Subida nueva tarjeta"
           id="iconoSubir"
         />
         <img
-          src="assets/img/iconosHeader/lupa-dia.png"
+          src="assets/img/iconos/lupa-dia.png"
           alt="Lupa para buscar"
           id="iconoLupa"
         />
@@ -43,16 +43,19 @@
         <!-- Aquí se irán insertando dinámicamente los peleadores-->
       </ul>
       <form id="anyadirTarjeta">
+        <img src="assets/img/iconos/cerrar.png" alt="cerrarModal" id="imagenCerrarFormulario" />
         <label for="nombre">Nombre del peleador*</label>
         <input type="text" id="nombre" name="nombre" required />
         <label for="apellido">Apellido del peleador*</label>
         <input type="text" id="apellido" name="apellido" required />
         <label for="alias">Alias del peleador</label>
         <input type="text" id="alias" name="alias" />
-        <label for="pais">País del peleador</label>
+        <label for="pais">País del peleador*</label>
         <input type="text" id="pais" name="pais" required />
-        <label for="urlImagen">URL de la imagen</label>
-        <input type="url" id="urlImagen" name="urlImagen" required />
+        <label for="cita">Cita del peleador</label>
+        <input type="text" id="cita" name="cita" />
+        <label for="imagenUrl">URL de la imagen</label>
+        <input type="url" id="imagenUrl" name="imagenUrl"/>
         <button type="submit">Enviar</button>
       </form>
     </main>

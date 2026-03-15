@@ -9,45 +9,42 @@ const iconoLupa = document.getElementById("iconoLupa");
 radioDia.addEventListener("change", () => {
   if (radioDia.checked) {
     document.body.classList.remove("darkMode");
-    iconoSol.src = "assets/img/iconosHeader/sol-dia.png";
-    iconoLuna.src = "assets/img/iconosHeader/luna-dia.png";
-    iconoSubir.src = "assets/img/iconosHeader/subir-dia.png";
-    iconoLupa.src = "assets/img/iconosHeader/lupa-dia.png";
+    iconoSol.src = "assets/img/iconos/sol-dia.png";
+    iconoLuna.src = "assets/img/iconos/luna-dia.png";
+    iconoSubir.src = "assets/img/iconos/subir-dia.png";
+    iconoLupa.src = "assets/img/iconos/lupa-dia.png";
   }
 });
 
 radioNoche.addEventListener("change", () => {
   if (radioNoche.checked) {
     document.body.classList.add("darkMode");
-    iconoSol.src = "assets/img/iconosHeader/sol-noche.png";
-    iconoLuna.src = "assets/img/iconosHeader/luna-noche.png";
-    iconoSubir.src = "assets/img/iconosHeader/subir-noche.png";
-    iconoLupa.src = "assets/img/iconosHeader/lupa-noche.png";
+    iconoSol.src = "assets/img/iconos/sol-noche.png";
+    iconoLuna.src = "assets/img/iconos/luna-noche.png";
+    iconoSubir.src = "assets/img/iconos/subir-noche.png";
+    iconoLupa.src = "assets/img/iconos/lupa-noche.png";
   }
 });
 
 // Extraer peleadores del XML
 
-//Creamos un array de peleadores
+//Recogemos el ul de la lista de peleadores
+const lista = document.getElementById("listaPeleadores");
+
+// Array donde guardamos los peleadores cargados del XML
 const peleadores = [];
 
-//Coghemos la informacion del xml
+// Cargar XML
 fetch("data/peleadores.xml")
-  .then((peleador) => peleador.text())
+  .then((res) => res.text())
   .then((xmlString) => {
-    //Creamos un objeto para pasar la información del xml a String
     const parser = new DOMParser();
     const xml = parser.parseFromString(xmlString, "text/xml");
-
-    //Recogemos la información del xml en un array para poder utilizarlo después
     const peleadoresXML = xml.getElementsByTagName("peleador");
 
-    //Creamos un bucle para recorrer el array con la información de los peleadores para ir introduciendolos
-    // dinamicamente en el html
     for (let i = 0; i < peleadoresXML.length; i++) {
-      //Creamos un objeto peleador con cada uno de los que tenemos en el XML
       const peleador = {
-        id: "peleador" + (i + 1),
+        id: peleadoresXML[i].getAttribute("id"),
         nombre: peleadoresXML[i].getElementsByTagName("nombre")[0].textContent,
         apellido:
           peleadoresXML[i].getElementsByTagName("apellido")[0].textContent,
@@ -63,22 +60,61 @@ fetch("data/peleadores.xml")
     }
   });
 
-//Recogemos el ul de la lista de peleadores
-const lista = document.getElementById("listaPeleadores");
-
-//Funcion para imprimir por pantalla un peleador
+// Función para pintar un peleador en la lista
 function renderPeleador(p) {
   const li = document.createElement("li");
-
-  //Introducimos los datos del peleador
   li.innerHTML = `
-                <img src="${p.imagenUrl}" alt="Imagen de ${p.nombre} ${p.apellido}">
-                <h2>${p.nombre} ${p.apellido}</h2>
-                <p>${p.alias}</p>
-                <p>${p.pais}</p>
-                <p>${p.cita}</p>
-            `;
-
-  //Ponemos el peleador en el ul del html dinamicamente
+        <img src="${p.imagenUrl}" alt="Imagen de ${p.nombre} ${p.apellido}">
+        <h2>${p.nombre} ${p.apellido}</h2>
+        <p><strong>Alias:</strong> ${p.alias}</p>
+        <p><strong>País:</strong> ${p.pais}</p>
+        <p><strong>Cita:</strong> ${p.cita}</p>
+    `;
   lista.appendChild(li);
 }
+
+//Cogemos el elemento del propio formulario
+const form = document.getElementById("anyadirTarjeta");
+
+
+iconoSubir.addEventListener("click", () => {
+  form.style.display = "flex";
+})
+
+// Añadir nuevo peleador desde el formulario
+form.addEventListener("submit", (e) => {
+  //Evita que se recargue la página
+  e.preventDefault();
+
+  // Crear un nuevo peleador con ID dinámico
+  const nuevoPeleador = {
+    id: "peleador" + (peleadores.length + 1),
+    nombre: document.getElementById("nombre").value,
+    apellido: document.getElementById("apellido").value,
+    alias: document.getElementById("alias").value,
+    pais: document.getElementById("pais").value,
+    cita: document.getElementById("cita").value,
+    imagenUrl: document.getElementById("imagenUrl").value,
+  };
+
+  peleadores.push(nuevoPeleador); // Guardamos en el array
+  renderPeleador(nuevoPeleador); // Pintamos en la página
+  form.reset(); // Limpiar formulario
+});
+
+// Hacemos que el boton de la cruz cambie cuando queramos cerrar el formulario
+const imagenCerrarFormulario = document.getElementById("imagenCerrarFormulario");
+
+imagenCerrarFormulario.addEventListener("mouseover", () => {
+  imagenCerrarFormulario.src = "assets/img/iconos/cerrar-hover.png";
+})
+
+imagenCerrarFormulario.addEventListener("mouseout", () => {
+  imagenCerrarFormulario.src = "assets/img/iconos/cerrar.png";
+})
+
+//Ahora hacemos que el boton cierre y limpie el formulario
+imagenCerrarFormulario.addEventListener("click", (e) => {
+  form.style.display = "none";
+  form.reset();
+})
