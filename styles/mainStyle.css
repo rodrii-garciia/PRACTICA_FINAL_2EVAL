@@ -179,14 +179,13 @@ h1 {
 }
 
 #anyadirTarjeta label {
-
 }
 
 #anyadirTarjeta input {
   margin-bottom: 15px;
 }
 
-#anyadirTarjeta button{
+#anyadirTarjeta button {
   height: 5vh;
   border-radius: 30px;
   width: 90%;
@@ -196,7 +195,8 @@ h1 {
   font-size: 3.5vh;
 }
 
-#anyadirTarjeta button:hover {}
+#anyadirTarjeta button:hover {
+}
 
 /*Footer*/
 footer {

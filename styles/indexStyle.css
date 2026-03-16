@@ -42,8 +42,8 @@ main {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)),
     url("../assets/img/bgImage.png");
-  background-size:cover;
-  background-repeat:no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: white;
 }
 
@@ -123,9 +123,9 @@ footer p {
 
 @keyframes animacionTitulo {
   from {
-    color: var(--color-header-footer)
+    color: var(--color-header-footer);
   }
-  to{
+  to {
     color: red;
   }
 }

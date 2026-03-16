@@ -113,15 +113,17 @@ form.addEventListener("submit", (e) => {
 });
 
 // Hacemos que el boton de la cruz cambie cuando queramos cerrar el formulario
-const imagenCerrarFormulario = document.getElementById("imagenCerrarFormulario");
+const imagenCerrarFormulario = document.getElementById(
+  "imagenCerrarFormulario",
+);
 
 imagenCerrarFormulario.addEventListener("mouseover", () => {
   imagenCerrarFormulario.src = "assets/img/iconos/cerrar-hover.png";
-})
+});
 
 imagenCerrarFormulario.addEventListener("mouseout", () => {
   imagenCerrarFormulario.src = "assets/img/iconos/cerrar.png";
-})
+});
 
 //Ahora hacemos que el boton cierre y limpie el formulario
-imagenCerrarFormulario.addEventListener("click", cerrarFormulario)
+imagenCerrarFormulario.addEventListener("click", cerrarFormulario);
