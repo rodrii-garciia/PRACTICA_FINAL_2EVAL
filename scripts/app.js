@@ -5,6 +5,9 @@ const iconoSol = document.getElementById("iconoSol");
 const iconoLuna = document.getElementById("iconoLuna");
 const iconoSubir = document.getElementById("iconoSubir");
 const iconoLupa = document.getElementById("iconoLupa");
+const imagenCerrarFormulario = document.getElementById(
+  "imagenCerrarFormulario",
+);
 
 radioDia.addEventListener("change", () => {
   if (radioDia.checked) {
@@ -13,6 +16,7 @@ radioDia.addEventListener("change", () => {
     iconoLuna.src = "assets/img/iconos/luna-dia.png";
     iconoSubir.src = "assets/img/iconos/subir-dia.png";
     iconoLupa.src = "assets/img/iconos/lupa-dia.png";
+    imagenCerrarFormulario.src = "assets/img/iconos/cerrar-dia.png";
   }
 });
 
@@ -23,6 +27,7 @@ radioNoche.addEventListener("change", () => {
     iconoLuna.src = "assets/img/iconos/luna-noche.png";
     iconoSubir.src = "assets/img/iconos/subir-noche.png";
     iconoLupa.src = "assets/img/iconos/lupa-noche.png";
+    imagenCerrarFormulario.src = "assets/img/iconos/cerrar-noche.png";
   }
 });
 
@@ -112,18 +117,31 @@ form.addEventListener("submit", (e) => {
   cerrarFormulario();
 });
 
-// Hacemos que el boton de la cruz cambie cuando queramos cerrar el formulario
-const imagenCerrarFormulario = document.getElementById(
-  "imagenCerrarFormulario",
-);
-
-imagenCerrarFormulario.addEventListener("mouseover", () => {
-  imagenCerrarFormulario.src = "assets/img/iconos/cerrar-hover.png";
-});
-
-imagenCerrarFormulario.addEventListener("mouseout", () => {
-  imagenCerrarFormulario.src = "assets/img/iconos/cerrar.png";
-});
-
 //Ahora hacemos que el boton cierre y limpie el formulario
 imagenCerrarFormulario.addEventListener("click", cerrarFormulario);
+
+// filtrar peleadores
+const formularioFiltrar = document.getElementById("formularioBusqueda");
+const inputFiltrado = document.getElementById("inputFiltrado");
+
+iconoLupa.addEventListener("click", () => {
+  formularioFiltrar.style.display = "flex";
+});
+
+formularioFiltrar.addEventListener("submit", (e) =>{
+  e.preventDefault();
+
+  const inputValue = inputFiltrado.value.toLowerCase();
+
+  const filtrados = peleadores.filter((peleador) => {
+    return (
+      peleador.nombre.toLowerCase().includes(inputValue) ||
+      peleador.apellido.toLowerCase().includes(inputValue) ||
+      peleador.pais.toLowerCase().includes(inputValue)
+    );
+  });
+
+  lista.innerHTML = "";
+
+  filtrados.forEach((peleador) => renderPeleador(peleador));
+})

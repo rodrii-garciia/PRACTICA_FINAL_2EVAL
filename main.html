@@ -38,27 +38,63 @@
       </ul>
       <form id="anyadirTarjeta">
         <img
-          src="assets/img/iconos/cerrar.png"
+          src="assets/img/iconos/cerrar-dia.png"
           alt="cerrarModal"
           id="imagenCerrarFormulario"
         />
         <label for="nombre">Nombre del peleador*</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Ej: Anderson" required />
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          placeholder="Ej: Anderson"
+          required
+        />
         <label for="apellido">Apellido del peleador*</label>
-        <input type="text" id="apellido" name="apellido" placeholder="Ej: Silva" required />
+        <input
+          type="text"
+          id="apellido"
+          name="apellido"
+          placeholder="Ej: Silva"
+          required
+        />
         <label for="alias">Alias del peleador</label>
-        <input type="text" id="alias" name="alias" placeholder="Ej: Spider"/>
+        <input type="text" id="alias" name="alias" placeholder="Ej: Spider" />
         <label for="pais">País del peleador*</label>
-        <input type="text" id="pais" name="pais" placeholder="Ej: Brasil" required />
+        <input
+          type="text"
+          id="pais"
+          name="pais"
+          placeholder="Ej: Brasil"
+          required
+        />
         <label for="cita">Cita del peleador</label>
-        <input type="text" id="cita" name="cita" placeholder="Ej: I’m not the best, but I believe I can do things that people think are impossible." />
-        <label for="imagenUrl">URL de la imagen</label>
-        <input type="url" id="imagenUrl" name="imagenUrl" placeholder="Ej: https://www.google.com/imgres?q=nate%20diaz&imgurl=https%3A%2F%2Fa.espncdn.com%2Fi%2Fheadshots%2Fmma%2Fplayers%2Ffull%2F2335679.png&imgrefurl=https%3A%2F%2Fwww.espn.com.ar%2Fmma%2Fpeleador%2F_%2Fid%2F2335679%2Fnate-diaz&docid=IeIG6aXFfeD-LM&tbnid=-fmlYiAzLy9ShM&vet=12ahUKEwid9tvygaSTAxXwSKQEHU7BGAUQnPAOegQIFxAB..i&w=600&h=436&hcb=2&ved=2ahUKEwid9tvygaSTAxXwSKQEHU7BGAUQnPAOegQIFxAB" />
+        <input
+          type="text"
+          id="cita"
+          name="cita"
+          placeholder="Ej: I’m not the best, but I believe I can do things that people think are impossible."
+        />
+        <label for="imagenUrl">Seleccione una imagen</label>
+        <input
+          type="url"
+          id="imagenUrl"
+          name="imagenUrl"
+          placeholder="Ej: https://www.google.com/imagenAndersonSilva"
+        />
         <button type="submit">Enviar</button>
+      </form>
+
+      <form id="formularioBusqueda">
+        <input
+          type="text"
+          id="inputFiltrado"
+          placeholder="Ingrese el nombre o país a buscar..."
+        />
       </form>
     </main>
     <footer>
-      <p>CopyRight © UFC Athletes</p>
+      <p>UFC Athletes</p>
       <p>David López Zurrón y Rodrigo García Sánchez</p>
     </footer>
   </body>
