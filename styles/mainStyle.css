@@ -12,6 +12,8 @@
   --color-fondo-formulario: #ca1111;
   --color-fondo-boton-formulario: black;
   --text-color-button: white;
+  --text-color-placeholder: black;
+  --color-outline-input: #000000;
 }
 
 body.darkMode {
@@ -26,6 +28,8 @@ body.darkMode {
   --color-fondo-formulario: #000000e6;
   --color-fondo-boton-formulario: #ca1111ff;
   --text-color-button: black;
+  --text-color-placeholder: white;
+  --color-outline-input: #ca1111ff;
 }
 
 body {
@@ -89,20 +93,82 @@ header h2 {
   display: none;
 }
 
-header input {
+.inputsRadio {
   display: none;
 }
 
 .iconosDerecha {
   display: flex;
   gap: 20px;
-    position: absolute;
-    right: 10px;
-    transition: transform 1.5s;
+  position: absolute;
+  right: 10px;
+  transition: transform 1.5s;
 }
 
-.moverIconosDerecha{
-    transform: translateX(-45%);
+/*Estas dos van para iconosDerecha*/
+.moverAIzq {
+  transform: translateX(-21vw);
+}
+
+.posicionOriginal{
+    transform: translateX(0);
+}
+
+#formularioBusqueda {
+  display: none;
+  position: absolute;
+  right: 1vw;
+}
+
+.aparecerInputBusqueda {
+  animation: animacionInputFormularioEntrada 1.5s;
+}
+
+.desaparecerInputBusqueda{
+    animation: animacionInputFormularioSalida 1.5s;
+}
+
+@keyframes animacionInputFormularioEntrada {
+  from {
+      opacity: 50%;
+    transform: translateX(18vw);
+  }
+    to {
+        opacity: 100%;
+    transform: translateX(0);
+
+  }
+}
+
+@keyframes animacionInputFormularioSalida {
+    from {
+        opacity: 100%;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(18vw);
+
+    }
+}
+
+#inputFiltrado {
+  width: 18vw;
+  height: 4vh;
+  border-radius: 30px;
+  padding-left: 15px;
+  border: none;
+  color: var(--text-color);
+  background-color: var(--color-main);
+}
+
+#inputFiltrado::placeholder {
+  color: var(--text-color-placeholder);
+}
+
+#inputFiltrado:hover,
+#inputFiltrado:focus {
+  outline: 2px double var(--color-outline-input);
 }
 
 /*Main*/

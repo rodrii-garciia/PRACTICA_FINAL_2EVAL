@@ -85,12 +85,26 @@ const form = document.getElementById("anyadirTarjeta");
 function abrirFormulario() {
   form.style.display = "flex";
   lista.classList.add("formularioAbierto");
+
+  //Cerramos las cosas de busqueda
+  cerrarBusqueda();
+  //Reseteamos el formulario
+  formularioFiltrar.reset();
+  //Imprimimos todos los peleadores guardados
+  for (const p of peleadores) {
+    renderPeleador(p)
+  }
+  //Ponemos el estilo del cursor encima de la lupa como bloqueado
+  iconoLupa.style.cursor = "not-allowed";
 }
 
 function cerrarFormulario() {
   form.style.display = "none";
   lista.classList.remove("formularioAbierto");
   form.reset();
+
+  //Damos el estilo del cursor a apto en la lupa
+  iconoLupa.style.cursor = "pointer"
 }
 
 //AddEventListener para abrir formulario
@@ -104,36 +118,76 @@ form.addEventListener("submit", (e) => {
   // Crear un nuevo peleador con ID dinámico
   const nuevoPeleador = {
     id: "peleador" + (peleadores.length + 1),
-    nombre: document.getElementById("nombre").value,
-    apellido: document.getElementById("apellido").value,
-    alias: document.getElementById("alias").value,
-    pais: document.getElementById("pais").value,
-    cita: document.getElementById("cita").value,
-    imagenUrl: imagenTemporal
+    nombre: document.getElementById("nombre").value.trim(),
+    apellido: document.getElementById("apellido").value.trim(),
+    alias: document.getElementById("alias").value.trim(),
+    pais: document.getElementById("pais").value.trim(),
+    cita: document.getElementById("cita").value.trim(),
+    imagenUrl: imagenTemporal,
   };
 
-  peleadores.push(nuevoPeleador); // Guardamos en el array
-  renderPeleador(nuevoPeleador); // Pintamos en la página
+  // Guardamos en el array
+  peleadores.push(nuevoPeleador);
+  // Pintamos en la página
+  renderPeleador(nuevoPeleador);
   cerrarFormulario();
+
+  //Damos el estilo del cursor a apto en la lupa
+  iconoLupa.style.cursor = "pointer";
 });
 
 //Ahora hacemos que el boton cierre y limpie el formulario
 imagenCerrarFormulario.addEventListener("click", cerrarFormulario);
 
-// filtrar peleadores
+// Recogida de constantes del DOM
 const formularioFiltrar = document.getElementById("formularioBusqueda");
 const inputFiltrado = document.getElementById("inputFiltrado");
-const iconosDerecha = document.getElementsByClassName("imagenesDerecha")
+const iconosDerecha = document.getElementsByClassName("iconosDerecha")[0];
 
+//Creamos una funcion para aparecer el input de busqueda y desplazar la lupa
+function abrirBusqueda() {
+  //Asignamos las clases correspondientes para las animaciones
+  iconosDerecha.classList.add("moverAIzq");
+  iconosDerecha.classList.remove("posicionOriginal");
+  formularioFiltrar.classList.remove("desaparecerInputBusqueda");
+  formularioFiltrar.classList.add("aparecerInputBusqueda");
+
+  //Le añadimos restraso de 0.1 seg para aparecer el input
+  setTimeout(() => {
+    formularioFiltrar.classList.add("aparecerInputBusqueda");
+    formularioFiltrar.style.display = "flex";
+  }, 100);
+}
+
+//Creamos una funcion para desaparecer el input de busqueda y desplazar de nuevo la lupa
+function cerrarBusqueda() {
+  //Asignamos y quitamos las clases correspondientes para las animaciones
+  iconosDerecha.classList.remove("moverAIzq");
+  iconosDerecha.classList.add("posicionOriginal");
+  formularioFiltrar.classList.remove("aparecerInputBusqueda");
+  formularioFiltrar.classList.add("desaparecerInputBusqueda");
+
+  //Le añadimos restraso de 1.5 seg para ocultar el input
+  setTimeout(() => {
+    formularioFiltrar.style.display = "none";
+  }, 1050);
+}
+
+//Creamos el addEventListener en el que, al pulsar la lupa se despliega el buscador
 iconoLupa.addEventListener("click", () => {
-  formularioFiltrar.style.display = "flex";
-  iconosDerecha.classList.add("moverIconosDerecha");
+  //Añadimos una condicion para que, en caso de que esté desplegado se cierre y viceversa
+  if (iconosDerecha.classList.contains("posicionOriginal")) {
+    abrirBusqueda();
+  } else {
+    cerrarBusqueda();
+  }
 });
 
-formularioFiltrar.addEventListener("submit", (e) =>{
+//Lógica del filtrado
+formularioFiltrar.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const inputValue = inputFiltrado.value.toLowerCase();
+  const inputValue = inputFiltrado.value.trim().toLowerCase();
 
   const filtrados = peleadores.filter((peleador) => {
     return (
@@ -143,10 +197,12 @@ formularioFiltrar.addEventListener("submit", (e) =>{
     );
   });
 
+  //Borramos los peleadores que ya estan para poner solo los filtrados
   lista.innerHTML = "";
 
+  //Renderizamos los peleadores filtrados
   filtrados.forEach((peleador) => renderPeleador(peleador));
-})
+});
 
 // para obtener una imagen desde el dispositivo local
 const inputImagen = document.getElementById("imagenLocal");
@@ -156,11 +212,11 @@ let imagenTemporal = "";
 inputImagen.addEventListener("change", () => {
   const archivo = inputImagen.files[0];
 
-    const reader = new FileReader();
+  const reader = new FileReader();
 
-    reader.onload = function(e) {
-        imagenTemporal = e.target.result;
-    };
+  reader.onload = (e) => {
+    imagenTemporal = e.target.result;
+  };
 
-    reader.readAsDataURL(archivo);
+  reader.readAsDataURL(archivo);
 });

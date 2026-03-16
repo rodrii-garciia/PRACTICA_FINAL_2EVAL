@@ -8,8 +8,8 @@
   </head>
   <body>
     <header>
-      <input type="radio" name="modoColores" id="modoDia" checked />
-      <input type="radio" name="modoColores" id="modoNoche" />
+      <input type="radio" name="modoColores" id="modoDia" class = "inputsRadio" checked />
+      <input type="radio" name="modoColores" id="modoNoche" class = "inputsRadio" />
       <div class="escogerModo">
         <label for="modoDia"
           ><img src="assets/img/iconos/sol-dia.png" alt="Sol" id="iconoSol"
@@ -19,7 +19,7 @@
         /></label>
       </div>
       <h2 onclick="window.open('https://www.ufc.com', '_blank')">UFC</h2>
-      <div class="iconosDerecha">
+      <div class="iconosDerecha posicionOriginal">
         <img
           src="assets/img/iconos/subir-dia.png"
           alt="Subida nueva tarjeta"
@@ -31,6 +31,13 @@
           id="iconoLupa"
         />
       </div>
+      <form id="formularioBusqueda">
+        <input
+          type="text"
+          id="inputFiltrado"
+          placeholder="Ingrese el nombre o país a buscar..."
+        />
+      </form>
     </header>
     <main>
       <ul id="listaPeleadores">
@@ -76,16 +83,8 @@
           placeholder="Ej: I’m not the best, but I believe I can do things that people think are impossible."
         />
         <label for="imagenLocal">Seleccione una imagen</label>
-        <input type="file" id="imagenLocal" accept="image/*">
+        <input type="file" id="imagenLocal" accept="image/*" />
         <button type="submit">Enviar</button>
-      </form>
-
-      <form id="formularioBusqueda">
-        <input
-          type="text"
-          id="inputFiltrado"
-          placeholder="Ingrese el nombre o país a buscar..."
-        />
       </form>
     </main>
     <footer>
