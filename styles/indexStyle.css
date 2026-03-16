@@ -84,8 +84,7 @@ h1 {
 h1 span {
   font-family: Sternbach, serif;
   color: var(--color-header-footer);
-  animation: animacionTitulo 3s;
-  animation: infinite;
+  animation: animacionTitulo infinite 5s;
 }
 
 .subtitulo {
@@ -122,10 +121,16 @@ footer p {
 }
 
 @keyframes animacionTitulo {
-  from {
+  
+  0% {
     color: var(--color-header-footer);
   }
-  to {
-    color: red;
+
+  50% {
+    color: rgb(146, 8, 8);
+  }
+
+  100% {
+    color: var(--color-header-footer);
   }
 }
