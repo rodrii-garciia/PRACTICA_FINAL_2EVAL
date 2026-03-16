@@ -81,6 +81,9 @@ function renderPeleador(p) {
 //Cogemos el elemento del propio formulario
 const form = document.getElementById("anyadirTarjeta");
 
+//Creamos una bandera
+let formularioCrearTarjetaAbierto;
+
 //Funciones abrir y cerrar formulario
 function abrirFormulario() {
   form.style.display = "flex";
@@ -90,12 +93,14 @@ function abrirFormulario() {
   cerrarBusqueda();
   //Reseteamos el formulario
   formularioFiltrar.reset();
-  //Imprimimos todos los peleadores guardados
+  //Imprimimos todos los peleadores guardados TODO
   for (const p of peleadores) {
     renderPeleador(p)
   }
   //Ponemos el estilo del cursor encima de la lupa como bloqueado
   iconoLupa.style.cursor = "not-allowed";
+  //Ponemos el valor de la bandera a false para que no se pueda abrir la lupa
+  formularioCrearTarjetaAbierto = true;
 }
 
 function cerrarFormulario() {
@@ -105,6 +110,8 @@ function cerrarFormulario() {
 
   //Damos el estilo del cursor a apto en la lupa
   iconoLupa.style.cursor = "pointer"
+  //Cambiamos la bandera de valor
+  formularioCrearTarjetaAbierto = false;
 }
 
 //AddEventListener para abrir formulario
@@ -134,6 +141,8 @@ form.addEventListener("submit", (e) => {
 
   //Damos el estilo del cursor a apto en la lupa
   iconoLupa.style.cursor = "pointer";
+  //Cambiamos el valor de la variable
+  formularioCrearTarjetaAbierto = false;
 });
 
 //Ahora hacemos que el boton cierre y limpie el formulario
@@ -146,17 +155,21 @@ const iconosDerecha = document.getElementsByClassName("iconosDerecha")[0];
 
 //Creamos una funcion para aparecer el input de busqueda y desplazar la lupa
 function abrirBusqueda() {
-  //Asignamos las clases correspondientes para las animaciones
-  iconosDerecha.classList.add("moverAIzq");
-  iconosDerecha.classList.remove("posicionOriginal");
-  formularioFiltrar.classList.remove("desaparecerInputBusqueda");
-  formularioFiltrar.classList.add("aparecerInputBusqueda");
-
-  //Le añadimos restraso de 0.1 seg para aparecer el input
-  setTimeout(() => {
+  if (!formularioCrearTarjetaAbierto){
+    //Asignamos las clases correspondientes para las animaciones
+    iconosDerecha.classList.add("moverAIzq");
+    iconosDerecha.classList.remove("posicionOriginal");
+    formularioFiltrar.classList.remove("desaparecerInputBusqueda");
     formularioFiltrar.classList.add("aparecerInputBusqueda");
-    formularioFiltrar.style.display = "flex";
-  }, 100);
+
+    //Le añadimos restraso de 0.1 seg para aparecer el input
+    setTimeout(() => {
+      formularioFiltrar.classList.add("aparecerInputBusqueda");
+      formularioFiltrar.style.display = "flex";
+    }, 100);
+  } else{
+    console.log("Busqueda bloqueada ya que el formulario para crear tarjeta está abierto")
+  }
 }
 
 //Creamos una funcion para desaparecer el input de busqueda y desplazar de nuevo la lupa
