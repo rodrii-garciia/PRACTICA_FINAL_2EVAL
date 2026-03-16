@@ -1,15 +1,5 @@
 @import url("fonts.css");
 
-@keyframes animacionBoton {
-  from {
-    opacity: 0;
-    transform: translateY(20vh);
-  }
-  to {
-    opacity: 100;
-  }
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -52,6 +42,8 @@ main {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)),
     url("../assets/img/bgImage.png");
+  background-size:cover;
+  background-repeat:no-repeat;
   color: white;
 }
 
@@ -92,6 +84,8 @@ h1 {
 h1 span {
   font-family: Sternbach, serif;
   color: var(--color-header-footer);
+  animation: animacionTitulo 3s;
+  animation: infinite;
 }
 
 .subtitulo {
@@ -115,4 +109,23 @@ footer {
 footer p {
   font-weight: 700;
   font-size: 2vh;
+}
+
+@keyframes animacionBoton {
+  from {
+    opacity: 0;
+    transform: translateY(20vh);
+  }
+  to {
+    opacity: 100;
+  }
+}
+
+@keyframes animacionTitulo {
+  from {
+    color: var(--color-header-footer)
+  }
+  to{
+    color: red;
+  }
 }
