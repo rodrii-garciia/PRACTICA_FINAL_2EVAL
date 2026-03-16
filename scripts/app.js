@@ -1,33 +1,79 @@
 // Cambiar al darkMode
 const radioDia = document.getElementById("modoDia");
 const radioNoche = document.getElementById("modoNoche");
+const radioCustom = document.getElementById("modoCustom");
 const iconoSol = document.getElementById("iconoSol");
 const iconoLuna = document.getElementById("iconoLuna");
+const iconoCustom = document.getElementById("iconoCustom");
 const iconoSubir = document.getElementById("iconoSubir");
 const iconoLupa = document.getElementById("iconoLupa");
+
 const imagenCerrarFormulario = document.getElementById(
   "imagenCerrarFormulario",
 );
 
 radioDia.addEventListener("change", () => {
-  if (radioDia.checked) {
-    document.body.classList.remove("darkMode");
-    iconoSol.src = "assets/img/iconos/sol-dia.png";
-    iconoLuna.src = "assets/img/iconos/luna-dia.png";
-    iconoSubir.src = "assets/img/iconos/subir-dia.png";
-    iconoLupa.src = "assets/img/iconos/lupa-dia.png";
-    imagenCerrarFormulario.src = "assets/img/iconos/cerrar-dia.png";
-  }
+
+  document.body.classList.remove("darkMode");
+
+  document.documentElement.style.removeProperty("--color-header");
+  document.documentElement.style.removeProperty("--color-main");
+  document.documentElement.style.removeProperty("--color-footer");
+
+  iconoSol.src = "assets/img/iconos/sol-dia.png";
+  iconoLuna.src = "assets/img/iconos/luna-dia.png";
+  iconoCustom.src = "assets/img/iconos/custom-dia.png";
+  iconoSubir.src = "assets/img/iconos/subir-dia.png";
+  iconoLupa.src = "assets/img/iconos/lupa-dia.png";
+
+  imagenCerrarFormulario.src = "assets/img/iconos/cerrar-dia.png";
 });
 
 radioNoche.addEventListener("change", () => {
-  if (radioNoche.checked) {
-    document.body.classList.add("darkMode");
-    iconoSol.src = "assets/img/iconos/sol-noche.png";
-    iconoLuna.src = "assets/img/iconos/luna-noche.png";
-    iconoSubir.src = "assets/img/iconos/subir-noche.png";
-    iconoLupa.src = "assets/img/iconos/lupa-noche.png";
-    imagenCerrarFormulario.src = "assets/img/iconos/cerrar-noche.png";
+
+  document.body.classList.add("darkMode");
+
+  document.documentElement.style.removeProperty("--color-header");
+  document.documentElement.style.removeProperty("--color-main");
+  document.documentElement.style.removeProperty("--color-footer");
+
+  iconoSol.src = "assets/img/iconos/sol-noche.png";
+  iconoLuna.src = "assets/img/iconos/luna-noche.png";
+  iconoCustom.src = "assets/img/iconos/custom-noche.png";
+  iconoSubir.src = "assets/img/iconos/subir-noche.png";
+  iconoLupa.src = "assets/img/iconos/lupa-noche.png";
+  imagenCerrarFormulario.src = "assets/img/iconos/cerrar-noche.png";
+});
+
+radioCustom.addEventListener("change", () => {
+
+  const divCustom = document.getElementById("divCustom");
+  divCustom.style.display = "flex";
+
+  divCustom.innerHTML = `
+    <label for="colorHeader" class="labelFormColores">Color header</label>
+    <input type="color" id="colorHeader" required>
+
+    <label for="colorMain" class="labelFormColores">Color main</label>
+    <input type="color" id="colorMain" required>
+
+    <label for="colorFooter" class="labelFormColores">Color footer</label>
+    <input type="color" id="colorFooter" required>
+
+    <button type="button" id="btnCustom">Aplicar</button>
+`;
+  document.getElementById("btnCustom").onclick = () => {
+
+    const headerColor = document.getElementById("colorHeader").value;
+    const mainColor = document.getElementById("colorMain").value;
+    const footerColor = document.getElementById("colorFooter").value;
+
+    document.body.classList.remove("darkMode");
+    document.documentElement.style.setProperty("--color-header", headerColor);
+    document.documentElement.style.setProperty("--color-main", mainColor);
+    document.documentElement.style.setProperty("--color-footer", footerColor);
+
+    divCustom.style.display = "none";
   }
 });
 
@@ -46,6 +92,8 @@ fetch("data/peleadores.xml")
     const parser = new DOMParser();
     const xml = parser.parseFromString(xmlString, "text/xml");
     const peleadoresXML = xml.getElementsByTagName("peleador");
+
+    lista.innerHTML = "";
 
     for (let i = 0; i < peleadoresXML.length; i++) {
       const peleador = {
@@ -93,10 +141,7 @@ function abrirFormulario() {
   cerrarBusqueda();
   //Reseteamos el formulario
   formularioFiltrar.reset();
-  //Imprimimos todos los peleadores guardados TODO
-  for (const p of peleadores) {
-    renderPeleador(p)
-  }
+
   //Ponemos el estilo del cursor encima de la lupa como bloqueado
   iconoLupa.style.cursor = "not-allowed";
   //Ponemos el valor de la bandera a false para que no se pueda abrir la lupa
@@ -219,6 +264,7 @@ formularioFiltrar.addEventListener("submit", (e) => {
 
 // para obtener una imagen desde el dispositivo local
 const inputImagen = document.getElementById("imagenLocal");
+const outputImagen = document.getElementById("nombreArchivo");
 
 let imagenTemporal = "";
 
@@ -226,6 +272,8 @@ inputImagen.addEventListener("change", () => {
   const archivo = inputImagen.files[0];
 
   const reader = new FileReader();
+
+  outputImagen.innerText = "Imagen subida";
 
   reader.onload = (e) => {
     imagenTemporal = e.target.result;

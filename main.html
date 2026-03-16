@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,16 +8,26 @@
   </head>
   <body>
     <header>
-      <input type="radio" name="modoColores" id="modoDia" class = "inputsRadio" checked />
-      <input type="radio" name="modoColores" id="modoNoche" class = "inputsRadio" />
       <div class="escogerModo">
-        <label for="modoDia"
-          ><img src="assets/img/iconos/sol-dia.png" alt="Sol" id="iconoSol"
-        /></label>
-        <label for="modoNoche"
-          ><img src="assets/img/iconos/luna-dia.png" alt="Luna" id="iconoLuna"
-        /></label>
+        <label for="modoDia">
+          <img src="assets/img/iconos/sol-dia.png" alt="Sol" id="iconoSol"/>
+        </label>
+        <input type="radio" name="modoColores" id="modoDia" class="inputsRadio" checked/>
+
+        <label for="modoNoche">
+          <img src="assets/img/iconos/luna-dia.png" alt="Luna" id="iconoLuna"/>
+        </label>
+        <input type="radio" name="modoColores" id="modoNoche" class="inputsRadio"/>
+
+        <label for="modoCustom">
+          <img src="assets/img/iconos/custom-dia.png" alt="Custom" id="iconoCustom">
+        </label>
+        <input type="radio" name="modoColores" id="modoCustom" class="inputsRadio">
+        <div id="divCustom">
+          <!-- Aquí irán los inputs para el modoCustom-->
+        </div>
       </div>
+
       <h2 onclick="window.open('https://www.ufc.com', '_blank')">UFC</h2>
       <div class="iconosDerecha posicionOriginal">
         <img
@@ -80,10 +90,12 @@
           type="text"
           id="cita"
           name="cita"
-          placeholder="Ej: I’m not the best, but I believe I can do things that people think are impossible."
+          placeholder="Ej: I’m not the best, but I believe I can do great things"
         />
-        <label for="imagenLocal">Seleccione una imagen</label>
+        <label for="imagenLocal" id="btnImagenLocal">Seleccione una imagen</label>
+        <span id="nombreArchivo">Ningún archivo seleccionado</span>
         <input type="file" id="imagenLocal" accept="image/*" />
+
         <button type="submit">Enviar</button>
       </form>
     </main>
