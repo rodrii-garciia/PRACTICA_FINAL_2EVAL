@@ -9,6 +9,7 @@
   --color-tarjetas: #dcdcdc;
   --color-sombra-tarjetas: #ca1111ff;
   --color-sombra-tarjetas-hover: #ca1111;
+    --color-fondo-formulario: #ca1111;
 }
 
 body.darkMode {
@@ -20,6 +21,7 @@ body.darkMode {
   --color-texto-header-footer: #ca1111ff;
   --color-sombra-tarjetas: #000000;
   --color-sombra-tarjetas-hover: #838383;
+    --color-fondo-formulario: #000000e6;
 }
 
 body {
@@ -154,7 +156,7 @@ h1 {
 }
 
 #anyadirTarjeta {
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
@@ -163,11 +165,11 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
   height: 45vh;
   width: 30vw;
   border-radius: 30px;
   padding: 30px;
+    background-color: var(--color-fondo-formulario);
 }
 
 #anyadirTarjeta img {
@@ -179,19 +181,21 @@ h1 {
 }
 
 #anyadirTarjeta label {
+    font-family: Roboto, serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: white;
 }
 
 #anyadirTarjeta input {
-  margin-bottom: 15px;
+  margin-bottom: 2.7vh;
 }
 
 #anyadirTarjeta button {
   height: 5vh;
   border-radius: 30px;
-  width: 90%;
+  width: 100%;
   box-sizing: border-box;
-  position: absolute;
-  bottom: 5%;
   font-size: 3.5vh;
 }
 
