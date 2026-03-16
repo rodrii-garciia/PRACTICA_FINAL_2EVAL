@@ -109,7 +109,7 @@ form.addEventListener("submit", (e) => {
     alias: document.getElementById("alias").value,
     pais: document.getElementById("pais").value,
     cita: document.getElementById("cita").value,
-    imagenUrl: document.getElementById("imagenUrl").value,
+    imagenUrl: imagenTemporal
   };
 
   peleadores.push(nuevoPeleador); // Guardamos en el array
@@ -123,9 +123,11 @@ imagenCerrarFormulario.addEventListener("click", cerrarFormulario);
 // filtrar peleadores
 const formularioFiltrar = document.getElementById("formularioBusqueda");
 const inputFiltrado = document.getElementById("inputFiltrado");
+const iconosDerecha = document.getElementsByClassName("imagenesDerecha")
 
 iconoLupa.addEventListener("click", () => {
   formularioFiltrar.style.display = "flex";
+  iconosDerecha.classList.add("moverIconosDerecha");
 });
 
 formularioFiltrar.addEventListener("submit", (e) =>{
@@ -145,3 +147,20 @@ formularioFiltrar.addEventListener("submit", (e) =>{
 
   filtrados.forEach((peleador) => renderPeleador(peleador));
 })
+
+// para obtener una imagen desde el dispositivo local
+const inputImagen = document.getElementById("imagenLocal");
+
+let imagenTemporal = "";
+
+inputImagen.addEventListener("change", () => {
+  const archivo = inputImagen.files[0];
+
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        imagenTemporal = e.target.result;
+    };
+
+    reader.readAsDataURL(archivo);
+});

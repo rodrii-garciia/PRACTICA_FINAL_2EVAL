@@ -93,13 +93,16 @@ header input {
   display: none;
 }
 
-.imagenesDerecha {
+.iconosDerecha {
   display: flex;
   gap: 20px;
+    position: absolute;
+    right: 10px;
+    transition: transform 1.5s;
 }
 
-.desplazarImagenesDerecha{
-
+.moverIconosDerecha{
+    transform: translateX(-45%);
 }
 
 /*Main*/
