@@ -89,6 +89,7 @@ const peleadores = [];
 fetch("data/peleadores.xml")
   .then((res) => res.text())
   .then((xmlString) => {
+  
     const parser = new DOMParser();
     const xml = parser.parseFromString(xmlString, "text/xml");
     const peleadoresXML = xml.getElementsByTagName("peleador");
@@ -99,13 +100,11 @@ fetch("data/peleadores.xml")
       const peleador = {
         id: peleadoresXML[i].getAttribute("id"),
         nombre: peleadoresXML[i].getElementsByTagName("nombre")[0].textContent,
-        apellido:
-          peleadoresXML[i].getElementsByTagName("apellido")[0].textContent,
+        apellido:peleadoresXML[i].getElementsByTagName("apellido")[0].textContent,
         alias: peleadoresXML[i].getElementsByTagName("alias")[0].textContent,
         pais: peleadoresXML[i].getElementsByTagName("pais")[0].textContent,
         cita: peleadoresXML[i].getElementsByTagName("cita")[0].textContent,
-        imagenUrl:
-          peleadoresXML[i].getElementsByTagName("imagenUrl")[0].textContent,
+        imagenUrl:peleadoresXML[i].getElementsByTagName("imagenUrl")[0].textContent,
       };
 
       peleadores.push(peleador);
